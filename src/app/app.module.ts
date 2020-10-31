@@ -9,11 +9,8 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { CardComponent } from './contacts/card/card.component';
 import { GridComponent } from './contacts/grid/grid.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
-import {MatSelectModule} from '@angular/material/select';
-import {MatPaginatorModule} from '@angular/material/paginator';
 import { FilterPipe } from './filter.pipe';
 import { TestComponent } from './boundary-cases/test/test.component';
 import { LevelOneComponent } from './boundary-cases/level-one/level-one.component';
@@ -44,11 +41,8 @@ import { SelectComponent } from './components/select/select.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatInputModule,
     FormsModule,
     MatIconModule,
-    MatSelectModule,
-    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

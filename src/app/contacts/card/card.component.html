@@ -12,30 +12,11 @@
   </div>
   <div class="card-body">
     <form class="example-form">
-      <mat-form-field class="full-width">
-        <mat-label>Ime</mat-label>
-        <input matInput placeholder="Janez" name="firstName" [(ngModel)]="contact.firstName">
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <mat-label>Priimek</mat-label>
-        <input matInput placeholder="Novak" name="lastName" [(ngModel)]="contact.lastName">
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="test@test.si" name="email" [(ngModel)]="contact.email">
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <mat-label>Phone</mat-label>
-        <input matInput placeholder="+1 123 456 789" name="phone" [(ngModel)]="contact.phone">
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <mat-label>Podjetje</mat-label>
-        <mat-select [(ngModel)]="contact.companyId" name="company">
-          <mat-option *ngFor="let company of companies" [value]="company.id">
-            {{ company.companyName }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+      <app-input [(ngModel)]="contact.firstName" name="ime" placeholder="Janez" label="Ime"></app-input>
+      <app-input [(ngModel)]="contact.lastName" name="priimek" placeholder="Novak" label="Priimek"></app-input>
+      <app-input [(ngModel)]="contact.email" name="email" placeholder="info@test.com" label="Email"></app-input>
+      <app-input [(ngModel)]="contact.phone" name="telefon" placeholder="+386 31 123 456" label="Telefon"></app-input>
+      <app-select [(ngModel)]="contact.companyId" [data$]="companies" bindLabel="companyName" bindValue="id" name="companyId" label="Podjetje"></app-select>
     </form>
   </div>
 </div>

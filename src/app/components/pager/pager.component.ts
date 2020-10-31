@@ -33,7 +33,7 @@ export class PagerComponent implements OnInit {
     this.emitChange();
   }
 
-  private calculateMaxPages() {
+  calculateMaxPages() {
     const max = this.allRecords / this.pageSizeValue;
     this.maxPages = Math.floor(max);
     if (max === this.maxPages) {

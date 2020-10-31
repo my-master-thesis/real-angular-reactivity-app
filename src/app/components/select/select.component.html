@@ -1,1 +1,6 @@
-<p>select works!</p>
+<div class="form-group">
+  <label>{{ label }}:</label>
+  <select class="form-control" [(ngModel)]="value" [name]="name" (ngModelChange)="changeValue($event)">
+    <option *ngFor="let item of data$" [value]="bindValue ? item[bindValue] : item">{{ bindLabel ? item[bindLabel] : item }}</option>
+  </select>
+</div>

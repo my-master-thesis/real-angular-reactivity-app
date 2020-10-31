@@ -1,1 +1,11 @@
-<p>input works!</p>
+<div class="form-group">
+  <label>{{ label }}:</label>
+  <input
+         [placeholder]="placeholder"
+         [value]="value"
+         (input)="onChange($event.target.value)"
+         (blur)="onTouched()"
+         type="text"
+         class="form-control"
+  />
+</div>
