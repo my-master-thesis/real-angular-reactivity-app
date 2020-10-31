@@ -12,6 +12,7 @@ import {Subscription} from 'rxjs';
 export class CardComponent implements OnInit, OnDestroy {
 
   @Input() contact: Contact;
+  @Input() full: boolean;
   @Output() favoriteChange = new EventEmitter();
   @Output() delete = new EventEmitter();
 

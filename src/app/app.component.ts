@@ -10,7 +10,8 @@ export class AppComponent {
   public showToolbar = true;
   public sideMenuItems = [
     { link: '', text: 'Naslovnica' },
-    { link: 'contacts', text: 'Imenik' },
+    { link: 'contacts', text: 'Kontakti' },
+    { link: 'tasks', text: 'Naloge' },
     { link: 'boundary', text: 'Test robnih primerov' },
     { link: 'html', text: 'Vsebina' },
     { link: 'components', text: 'Komponente' },

@@ -3,12 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {BoundaryCasesComponent} from './boundary-cases/boundary-cases.component';
 import {ContactsComponent} from './contacts/contacts.component';
+import {DetailComponent} from './contacts/detail/detail.component';
+import {TasksComponent} from './tasks/tasks.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'boundary', component: BoundaryCasesComponent },
-  { path: 'contacts', component: ContactsComponent }
+  { path: 'contacts', component: ContactsComponent },
+  { path: 'contacts/:id', component: DetailComponent },
+  { path: 'tasks', component: TasksComponent },
 ];
 
 @NgModule({

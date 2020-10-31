@@ -10,9 +10,9 @@ export class PagerComponent implements OnInit {
     this.allRecords = length;
     this.calculateMaxPages();
   }
-  @Input() set pageSize(length: number) {
-    this.pageSizeValue = length;
-    this.calculateMaxPages();
+  @Input() set pageSize(pageSize: number) {
+    this.pageSizeValue = pageSize;
+    this.calculateMaxPages(true);
   }
   @Input() pageSizeOptions: number[];
 
@@ -33,7 +33,7 @@ export class PagerComponent implements OnInit {
     this.emitChange();
   }
 
-  calculateMaxPages() {
+  calculateMaxPages(forceChange = false) {
     const max = this.allRecords / this.pageSizeValue;
     this.maxPages = Math.floor(max);
     if (max === this.maxPages) {
@@ -41,6 +41,8 @@ export class PagerComponent implements OnInit {
     }
     if (typeof this.selectedPage !== 'number' || this.selectedPage > this.maxPages) {
       this.selectedPage = this.maxPages;
+      this.emitChange();
+    } else if (forceChange) {
       this.emitChange();
     }
   }

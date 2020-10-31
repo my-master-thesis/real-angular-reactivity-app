@@ -1,6 +1,8 @@
 <div class="form-group">
-  <label>{{ label }}:</label>
+  <label *ngIf="label">{{ label }}:</label>
   <select class="form-control" [(ngModel)]="value" [name]="name" (ngModelChange)="changeValue($event)">
-    <option *ngFor="let item of data$" [value]="bindValue ? item[bindValue] : item">{{ bindLabel ? item[bindLabel] : item }}</option>
+    <option *ngFor="let item of data$" [value]="bindValue ? item[bindValue] : item">
+      {{ bindLabel ? (item[bindLabel] + (bindLabelSecond ? ( ' ' + item[bindLabelSecond]) : '')) : item }}
+    </option>
   </select>
 </div>

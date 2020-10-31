@@ -53,8 +53,7 @@ export class ContactsComponent implements OnInit, OnDestroy {
   }
 
   remove(id: number) {
-    this.contacts = this.contacts.filter(contact => contact.id !== id);
-    this.getFavorites();
+    this.contactsStoreService.contactsSubject.next(this.contacts.filter(contact => contact.id !== id));
   }
 
   addNew() {

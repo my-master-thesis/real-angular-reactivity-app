@@ -3,14 +3,6 @@
     <app-contacts-card [contact]="contact" (favoriteChange)="favoriteChange.emit($event)" (delete)="delete.emit($event)"></app-contacts-card>
   </div>
 </div>
-<!--<mat-paginator-->
-<!--  *ngIf="search"-->
-<!--  [length]="contacts.length"-->
-<!--  [pageSize]="pageSize"-->
-<!--  [pageSizeOptions]="[6, 30, 60, 100]"-->
-<!--  (page)="pageChange($event)"-->
-<!--&gt;-->
-<!--</mat-paginator>-->
 <app-pager
   *ngIf="search"
   [length]="contacts.length"

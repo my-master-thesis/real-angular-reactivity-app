@@ -19,6 +19,9 @@ import { LevelThreeComponent } from './boundary-cases/level-three/level-three.co
 import { PagerComponent } from './components/pager/pager.component';
 import { InputComponent } from './components/input/input.component';
 import { SelectComponent } from './components/select/select.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { DetailComponent } from './contacts/detail/detail.component';
+import { TableComponent } from './tasks/table/table.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { SelectComponent } from './components/select/select.component';
     LevelThreeComponent,
     PagerComponent,
     InputComponent,
-    SelectComponent
+    SelectComponent,
+    TasksComponent,
+    DetailComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

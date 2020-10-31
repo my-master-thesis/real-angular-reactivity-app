@@ -15,6 +15,7 @@ export class SelectComponent implements OnInit, AfterViewInit, ControlValueAcces
 
   @Input() data$: any[];
   @Input() bindLabel: string;
+  @Input() bindLabelSecond: string;
   @Input() bindValue: string;
 
   @Output() changeEvent = new EventEmitter();

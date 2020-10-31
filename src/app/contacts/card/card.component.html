@@ -5,7 +5,7 @@
         <mat-icon class="mat-icon-rtl-mirror" [class.favorite]="contact.isFavorite" (click)="toggleFavorite()">star_rate</mat-icon>
         #{{ contact.id }} {{ contact.firstName }} {{ contact.lastName }}
       </div>
-      <div class="col-2">
+      <div *ngIf="!full" class="col-2">
         <mat-icon class="mat-icon-rtl-mirror" (click)="deleteContact()">delete</mat-icon>
       </div>
     </div>
@@ -17,6 +17,7 @@
       <app-input [(ngModel)]="contact.email" name="email" placeholder="info@test.com" label="Email"></app-input>
       <app-input [(ngModel)]="contact.phone" name="telefon" placeholder="+386 31 123 456" label="Telefon"></app-input>
       <app-select [(ngModel)]="contact.companyId" [data$]="companies" bindLabel="companyName" bindValue="id" name="companyId" label="Podjetje"></app-select>
+      <p *ngIf="!full"><a [routerLink]="contact.id">Več</a></p>
     </form>
   </div>
 </div>
