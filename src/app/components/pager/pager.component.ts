@@ -42,6 +42,8 @@ export class PagerComponent implements OnInit {
     if (typeof this.selectedPage !== 'number' || this.selectedPage > this.maxPages) {
       this.selectedPage = this.maxPages;
       this.emitChange();
+    } else if (this.selectedPage < 0 && this.allRecords > 0) {
+      this.setPage(0);
     } else if (forceChange) {
       this.emitChange();
     }
@@ -50,7 +52,7 @@ export class PagerComponent implements OnInit {
   private emitChange() {
     this.page.emit({
       pageIndex: this.selectedPage,
-      pageSize: this.pageSizeValue
+      pageSize: Number(this.pageSizeValue),
     });
   }
 

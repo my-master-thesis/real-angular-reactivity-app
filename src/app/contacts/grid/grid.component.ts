@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Contact} from '../contact';
-import {PageEvent} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-contacts-grid',
@@ -22,7 +21,7 @@ export class GridComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  pageChange(pageEvent: PageEvent) {
+  pageChange(pageEvent: {pageIndex: number, pageSize: number}) {
     this.pageIndex = pageEvent.pageIndex;
     this.pageSize = pageEvent.pageSize;
   }
