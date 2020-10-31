@@ -1,2 +1,25 @@
-<p>contacts works!</p>
-<app-contacts-grid></app-contacts-grid>
+<div *ngIf="favorites?.length" [@inOutAnimation] class="container">
+  <h2>Priljubljeni</h2>
+  <app-contacts-grid
+    [contacts]="favorites"
+    [search]="false"
+    (favoriteChange)="getFavorites()"
+    (delete)="remove($event)"
+  ></app-contacts-grid>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <h2>Vsi</h2>
+    </div>
+    <div class="col-2">
+      <button (click)="addNew()" class="btn btn-success">+</button>
+    </div>
+  </div>
+  <app-contacts-grid
+    [contacts]="contacts"
+    [search]="true"
+    (favoriteChange)="getFavorites()"
+    (delete)="remove($event)"
+  ></app-contacts-grid>
+</div>

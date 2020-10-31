@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-10">
+    <nav>
+      <ul class="pagination">
+        <li *ngIf="selectedPage > 0" class="page-item"><button (click)="changePage(-1)" class="page-link">Nazaj</button></li>
+        <li *ngIf="selectedPage !== 0" class="page-item"><button (click)="setPage(0)" class="page-link">1</button></li>
+        <li *ngIf="selectedPage > 1" class="page-item"><button class="page-link">...</button></li>
+        <li class="page-item active"><button class="page-link">{{ selectedPage + 1 }}</button></li>
+        <li *ngIf="selectedPage < maxPages - 1" class="page-item"><button class="page-link">...</button></li>
+        <li *ngIf="selectedPage !== maxPages" class="page-item"><button (click)="setPage(maxPages)" class="page-link active">{{ maxPages + 1 }}</button></li>
+        <li *ngIf="selectedPage < maxPages" class="page-item"><button (click)="changePage(1)" class="page-link">Naprej</button></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="col-2">
+    <select class="form-control" [(ngModel)]="pageSizeValue" (ngModelChange)="calculateMaxPages()">
+      <option *ngFor="let option of pageSizeOptions" [value]="option">{{ option }}</option>
+    </select>
+  </div>
+</div>

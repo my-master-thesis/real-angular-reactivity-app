@@ -8,6 +8,20 @@ import { BoundaryCasesComponent } from './boundary-cases/boundary-cases.componen
 import { ContactsComponent } from './contacts/contacts.component';
 import { CardComponent } from './contacts/card/card.component';
 import { GridComponent } from './contacts/grid/grid.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule} from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { FilterPipe } from './filter.pipe';
+import { TestComponent } from './boundary-cases/test/test.component';
+import { LevelOneComponent } from './boundary-cases/level-one/level-one.component';
+import { LevelTwoComponent } from './boundary-cases/level-two/level-two.component';
+import { LevelThreeComponent } from './boundary-cases/level-three/level-three.component';
+import { PagerComponent } from './components/pager/pager.component';
+import { InputComponent } from './components/input/input.component';
+import { SelectComponent } from './components/select/select.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +30,25 @@ import { GridComponent } from './contacts/grid/grid.component';
     BoundaryCasesComponent,
     ContactsComponent,
     CardComponent,
-    GridComponent
+    GridComponent,
+    FilterPipe,
+    TestComponent,
+    LevelOneComponent,
+    LevelTwoComponent,
+    LevelThreeComponent,
+    PagerComponent,
+    InputComponent,
+    SelectComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    FormsModule,
+    MatIconModule,
+    MatSelectModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,47 +1,7 @@
-<span>{{ counter }}</span>
-<table class="table">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Test</th>
-    <th scope="col">Porabljen čas v ms</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>
-      <button class="btn btn-dark" (click)="click()">Test this</button>
-    </td>
-    <td>{{ resultsClick }}</td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>
-      <button class="btn btn-dark" (click)="clickVar()">Test var</button>
-    </td>
-    <td>{{ resultsClickVar }}</td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td>
-      <button class="btn btn-dark" (click)="clickHidden()">Test hidden</button>
-    </td>
-    <td>{{ resultsClickHidden }}</td>
-  </tr>
-  <tr>
-    <th scope="row">4</th>
-    <td>
-      <button class="btn btn-dark" (click)="clickTimeout()">Test timeout</button>
-    </td>
-    <td>{{ resultsClickTimeout }}</td>
-  </tr>
-  <tr>
-    <th scope="row">5</th>
-    <td>
-      <button class="btn btn-dark" (click)="clickRecursiveTimeout(1000)">Test recursive timeout</button>
-    </td>
-    <td>{{ resultsClickRecursiveTimeout }}</td>
-  </tr>
-  </tbody>
-</table>
+<div class="container rounded pb-2">
+  <h2>Izvajanje testov na robnih primerih</h2>
+  <p>Ta del vsebuje teste, ki so opisani v 4. poglavju magistrskega dela.</p>
+  <h3>Nivo 0</h3>
+  <app-boundary-test></app-boundary-test>
+  <app-level-one></app-level-one>
+</div>

@@ -1,6 +1,20 @@
 <div class="row mr-md-n3 mr-0">
-  <div *ngFor="let contact of contacts" class="col-lg-4 col-md-6 mb-3">
-    <app-contacts-card [contact]="contact"></app-contacts-card>
+  <div *ngFor="let contact of contacts | filter: pageIndex: pageSize" class="col-lg-4 col-md-6 mb-3">
+    <app-contacts-card [contact]="contact" (favoriteChange)="favoriteChange.emit($event)" (delete)="delete.emit($event)"></app-contacts-card>
   </div>
 </div>
-
+<!--<mat-paginator-->
+<!--  *ngIf="search"-->
+<!--  [length]="contacts.length"-->
+<!--  [pageSize]="pageSize"-->
+<!--  [pageSizeOptions]="[6, 30, 60, 100]"-->
+<!--  (page)="pageChange($event)"-->
+<!--&gt;-->
+<!--</mat-paginator>-->
+<app-pager
+  *ngIf="search"
+  [length]="contacts.length"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[6, 30, 60, 100]"
+  (page)="pageChange($event)"
+></app-pager>

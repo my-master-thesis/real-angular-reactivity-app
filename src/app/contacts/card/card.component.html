@@ -1,7 +1,41 @@
 <div class="card">
-  <div class="card-header">Header</div>
+  <div class="card-header">
+    <div class="row">
+      <div class="col-10">
+        <mat-icon class="mat-icon-rtl-mirror" [class.favorite]="contact.isFavorite" (click)="toggleFavorite()">star_rate</mat-icon>
+        #{{ contact.id }} {{ contact.firstName }} {{ contact.lastName }}
+      </div>
+      <div class="col-2">
+        <mat-icon class="mat-icon-rtl-mirror" (click)="deleteContact()">delete</mat-icon>
+      </div>
+    </div>
+  </div>
   <div class="card-body">
-    <h5 class="card-title">Light card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <form class="example-form">
+      <mat-form-field class="full-width">
+        <mat-label>Ime</mat-label>
+        <input matInput placeholder="Janez" name="firstName" [(ngModel)]="contact.firstName">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Priimek</mat-label>
+        <input matInput placeholder="Novak" name="lastName" [(ngModel)]="contact.lastName">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="test@test.si" name="email" [(ngModel)]="contact.email">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Phone</mat-label>
+        <input matInput placeholder="+1 123 456 789" name="phone" [(ngModel)]="contact.phone">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Podjetje</mat-label>
+        <mat-select [(ngModel)]="contact.companyId" name="company">
+          <mat-option *ngFor="let company of companies" [value]="company.id">
+            {{ company.companyName }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
   </div>
 </div>
