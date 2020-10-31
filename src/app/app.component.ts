@@ -9,7 +9,7 @@ import {timer} from 'rxjs';
 export class AppComponent {
   public showToolbar = true;
   public sideMenuItems = [
-    { link: '', text: 'Naslovnica' },
+    { link: 'home', text: 'Naslovnica' },
     { link: 'contacts', text: 'Kontakti' },
     { link: 'tasks', text: 'Naloge' },
     { link: 'boundary', text: 'Test robnih primerov' },

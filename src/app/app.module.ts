@@ -16,7 +16,7 @@ import { TestComponent } from './boundary-cases/test/test.component';
 import { LevelOneComponent } from './boundary-cases/level-one/level-one.component';
 import { LevelTwoComponent } from './boundary-cases/level-two/level-two.component';
 import { LevelThreeComponent } from './boundary-cases/level-three/level-three.component';
-import { PagerComponent } from './components/pager/pager.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 import { InputComponent } from './components/input/input.component';
 import { SelectComponent } from './components/select/select.component';
 import { TasksComponent } from './tasks/tasks.component';
@@ -36,7 +36,7 @@ import { TableComponent } from './tasks/table/table.component';
     LevelOneComponent,
     LevelTwoComponent,
     LevelThreeComponent,
-    PagerComponent,
+    PaginationComponent,
     InputComponent,
     SelectComponent,
     TasksComponent,

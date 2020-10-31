@@ -8,7 +8,6 @@
         *ngFor="let item of sideMenuItems"
         [routerLink]="item.link"
         routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact: true}"
         class="list-group-item list-group-item-action"
       >{{ item.text }}</a>
     </div>

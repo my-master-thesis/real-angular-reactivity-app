@@ -8,11 +8,12 @@ import {TasksComponent} from './tasks/tasks.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'boundary', component: BoundaryCasesComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'contacts/:id', component: DetailComponent },
   { path: 'tasks', component: TasksComponent },
+  {path: '**', redirectTo: 'home'}
 ];
 
 @NgModule({

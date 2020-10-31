@@ -2,9 +2,9 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-pager',
-  templateUrl: './pager.component.html'
+  templateUrl: './pagination.component.html'
 })
-export class PagerComponent implements OnInit {
+export class PaginationComponent implements OnInit {
 
   @Input() set length(length: number) {
     this.allRecords = length;
