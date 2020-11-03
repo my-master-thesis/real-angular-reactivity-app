@@ -6,13 +6,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
-  public counter = 1;
+  public counterA = 1;
+  public counterB = 1;
+  public counterC = 1;
+  public initialObject = { title: 'Some random obj', value: 0, deeper: { title: 'Deeper object', someBool: true }, emptyOby: {}};
+
   public resultsClick;
   public resultsClickVar;
   public resultsClickHidden;
   public resultsClickTimeout;
   public resultsClickRecursiveTimeout;
+  public resultsMultiple;
+  public resultsSetObject;
+
   private hidden = 1;
+
+  private recursiveTimer;
 
   constructor() { }
 
@@ -23,7 +32,7 @@ export class TestComponent implements OnInit {
     console.time('Function this increase');
     const tmp = Date.now();
     for (let i = 0; i < 10000000; i++) {
-      this.counter++;
+      this.counterA++;
       // this.cdr.markForCheck();
     }
     this.resultsClick = Date.now() - tmp;
@@ -33,12 +42,12 @@ export class TestComponent implements OnInit {
   clickVar() {
     console.time('Function var increase');
     const tmp = Date.now();
-    let counter = this.counter;
+    let counter = this.counterB;
     for (let i = 0; i < 10000000; i++) {
       counter++;
     }
     this.resultsClickVar = Date.now() - tmp;
-    this.counter = counter;
+    this.counterB = counter;
     console.timeEnd('Function var increase');
   }
 
@@ -53,33 +62,55 @@ export class TestComponent implements OnInit {
   }
 
   clickTimeout() {
-    // eslint-disable-next-line no-console
     console.time('Function timeout increase');
     const tmp = Date.now();
     for (let i = 0; i < 1000; i++) {
       setTimeout(() => {
-        this.counter++;
+        this.counterC++;
       }, 1);
     }
     this.resultsClickTimeout = Date.now() - tmp;
-    // eslint-disable-next-line no-console
     console.timeEnd('Function timeout increase');
   }
 
   clickRecursiveTimeout(nr) {
     if (nr === 1000) {
-      // eslint-disable-next-line no-console
       console.time('Function recursive timeout increase');
+      this.recursiveTimer = Date.now();
     }
     if (nr > 0) {
       setTimeout(() => {
-        this.counter++;
+        this.counterC++;
         this.clickRecursiveTimeout(nr - 1);
       }, 1);
     } else {
-      // eslint-disable-next-line no-console
+      this.resultsClickRecursiveTimeout = Date.now() - this.recursiveTimer;
       console.timeEnd('Function recursive timeout increase');
     }
+  }
+
+  clickMultiple() {
+    console.time('Function multiple increase');
+    const tmp = Date.now();
+    for (let i = 0; i < 10000000; i++) {
+      this.counterA++;
+      this.counterB++;
+      this.counterC++;
+      // this.cdr.markForCheck();
+    }
+    this.resultsMultiple = Date.now() - tmp;
+    console.timeEnd('Function multiple increase');
+  }
+
+  clickSetObject() {
+    console.time('Function set object');
+    const tmp = Date.now();
+    for (let i = 0; i < 10000000; i++) {
+      this.initialObject = { title: 'Some changed obj', value: i, deeper: { title: 'Deeper object', someBool: true }, emptyOby: {}};
+      // this.cdr.markForCheck();
+    }
+    this.resultsSetObject = Date.now() - tmp;
+    console.timeEnd('Function set object');
   }
 
 }

@@ -1,4 +1,8 @@
-<span>{{ counter }}</span>
+<span>Števc A: <b>{{ counterA }}</b></span>&nbsp;
+<span>Števc B: <b>{{ counterB }}</b></span>&nbsp;
+<span>Števc C: <b>{{ counterC }}</b></span>
+<br>
+<span>Testni objekt: <b>{{ initialObject | json }}</b></span>
 <table class="table">
   <thead>
   <tr>
@@ -42,6 +46,20 @@
       <button class="btn btn-dark" (click)="clickRecursiveTimeout(1000)">Test recursive timeout</button>
     </td>
     <td>{{ resultsClickRecursiveTimeout }}</td>
+  </tr>
+  <tr>
+    <th scope="row">6</th>
+    <td>
+      <button class="btn btn-dark" (click)="clickMultiple()">Test set multiple</button>
+    </td>
+    <td>{{ resultsMultiple }}</td>
+  </tr>
+  <tr>
+    <th scope="row">7</th>
+    <td>
+      <button class="btn btn-dark" (click)="clickSetObject()">Test set object</button>
+    </td>
+    <td>{{ resultsSetObject }}</td>
   </tr>
   </tbody>
 </table>

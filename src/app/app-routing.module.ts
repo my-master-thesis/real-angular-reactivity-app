@@ -5,6 +5,7 @@ import {BoundaryCasesComponent} from './boundary-cases/boundary-cases.component'
 import {ContactsComponent} from './contacts/contacts.component';
 import {DetailComponent} from './contacts/detail/detail.component';
 import {TasksComponent} from './tasks/tasks.component';
+import {ContentComponent} from './content/content.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'contacts', component: ContactsComponent },
   { path: 'contacts/:id', component: DetailComponent },
   { path: 'tasks', component: TasksComponent },
+  { path: 'content', component: ContentComponent },
   {path: '**', redirectTo: 'home'}
 ];
 

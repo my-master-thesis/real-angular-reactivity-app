@@ -1,12 +1,12 @@
 <div class="card">
   <div class="card-header">
     <div class="row">
-      <div class="col-10">
-        <mat-icon class="mat-icon-rtl-mirror" [class.favorite]="contact.isFavorite" (click)="toggleFavorite()">star_rate</mat-icon>
-        #{{ contact.id }} {{ contact.firstName }} {{ contact.lastName }}
+      <div class="col-10 contact-card">
+        <app-star-icon [class.favorite]="contact.isFavorite" (click)="toggleFavorite()"></app-star-icon>
+        <div class="contact-card-title">#{{ contact.id }} {{ contact.firstName }} {{ contact.lastName }}</div>
       </div>
       <div *ngIf="!full" class="col-2">
-        <mat-icon class="mat-icon-rtl-mirror" (click)="deleteContact()">delete</mat-icon>
+        <app-trash-icon (click)="deleteContact()"></app-trash-icon>
       </div>
     </div>
   </div>

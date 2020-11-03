@@ -13,8 +13,8 @@ export class AppComponent {
     { link: 'contacts', text: 'Kontakti' },
     { link: 'tasks', text: 'Naloge' },
     { link: 'boundary', text: 'Test robnih primerov' },
-    { link: 'html', text: 'Vsebina' },
-    { link: 'components', text: 'Komponente' },
+    { link: 'content', text: 'Statična vsebina' },
+    { link: 'components', text: 'Dinamična vsebina' },
   ];
 
   toggleMenu() {
