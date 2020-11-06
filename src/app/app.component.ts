@@ -12,7 +12,7 @@ export class AppComponent {
     { link: 'home', text: 'Naslovnica' },
     { link: 'contacts', text: 'Kontakti' },
     { link: 'tasks', text: 'Naloge' },
-    { link: 'boundary', text: 'Test robnih primerov' },
+    { link: 'boundary', text: 'Test nastavljanja vrednosti' },
     { link: 'content', text: 'Statična vsebina' },
     { link: 'components', text: 'Dinamična vsebina' },
   ];

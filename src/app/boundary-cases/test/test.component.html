@@ -13,11 +13,25 @@
   </thead>
   <tbody>
   <tr>
-    <th scope="row">1</th>
+    <th scope="row">1A</th>
     <td>
       <button class="btn btn-dark" (click)="click()">Test this</button>
     </td>
     <td>{{ resultsClick }}</td>
+  </tr>
+  <tr>
+    <th scope="row">1B</th>
+    <td>
+      <button class="btn btn-dark" (click)="clickMultiple()">Test set multiple</button>
+    </td>
+    <td>{{ resultsMultiple }}</td>
+  </tr>
+  <tr>
+    <th scope="row">1C</th>
+    <td>
+      <button class="btn btn-dark" (click)="clickSetObject()">Test set object</button>
+    </td>
+    <td>{{ resultsSetObject }}</td>
   </tr>
   <tr>
     <th scope="row">2</th>
@@ -46,20 +60,6 @@
       <button class="btn btn-dark" (click)="clickRecursiveTimeout(1000)">Test recursive timeout</button>
     </td>
     <td>{{ resultsClickRecursiveTimeout }}</td>
-  </tr>
-  <tr>
-    <th scope="row">6</th>
-    <td>
-      <button class="btn btn-dark" (click)="clickMultiple()">Test set multiple</button>
-    </td>
-    <td>{{ resultsMultiple }}</td>
-  </tr>
-  <tr>
-    <th scope="row">7</th>
-    <td>
-      <button class="btn btn-dark" (click)="clickSetObject()">Test set object</button>
-    </td>
-    <td>{{ resultsSetObject }}</td>
   </tr>
   </tbody>
 </table>
