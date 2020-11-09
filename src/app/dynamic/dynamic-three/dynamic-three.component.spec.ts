@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StaticSevenComponent } from './static-seven.component';
+import { DynamicThreeComponent } from './dynamic-three.component';
 
-describe('StaticSevenComponent', () => {
-  let component: StaticSevenComponent;
-  let fixture: ComponentFixture<StaticSevenComponent>;
+describe('DynamicThreeComponent', () => {
+  let component: DynamicThreeComponent;
+  let fixture: ComponentFixture<DynamicThreeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StaticSevenComponent ]
+      declarations: [ DynamicThreeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StaticSevenComponent);
+    fixture = TestBed.createComponent(DynamicThreeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

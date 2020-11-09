@@ -1,9 +1,10 @@
-import {Component, Input, OnInit, Optional, Self} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit, Optional, Self} from '@angular/core';
 import {ControlValueAccessor, FormControl, NgControl} from '@angular/forms';
 
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class InputComponent implements OnInit, ControlValueAccessor {
   @Input() label: string;

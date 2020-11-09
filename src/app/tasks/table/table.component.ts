@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Task} from '../task';
 import {Contact} from '../../contacts/contact';
 import {Subscription} from 'rxjs';
@@ -8,6 +8,7 @@ import {TasksStoreService} from '../tasks-store.service';
 @Component({
   selector: 'app-tasks-table',
   templateUrl: './table.component.html',
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class TableComponent implements OnInit, OnDestroy {
 

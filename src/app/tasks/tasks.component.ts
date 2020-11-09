@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
 import {TasksStoreService} from './tasks-store.service';
 import {Subscription} from 'rxjs';
 import {Task} from './task';
@@ -6,6 +6,7 @@ import {Task} from './task';
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class TasksComponent implements OnInit, OnDestroy {
 

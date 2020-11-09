@@ -1,0 +1,11 @@
+<div class="container rounded pb-2" style="background-color: #e8e9ea;">
+  <h4>Komponenta 3</h4>
+  <p>Seznam poglavij dela vključen z zankami:</p>
+  <ul>
+    <li *ngFor="let content of contentArray">{{ content.title}}
+      <ul *ngIf="content.children">
+        <li *ngFor="let child of content.children">{{ child }}</li>
+      </ul>
+    </li>
+  </ul>
+</div>

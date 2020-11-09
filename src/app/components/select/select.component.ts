@@ -1,10 +1,11 @@
-import {AfterViewInit, Component, EventEmitter, Input, OnInit, Optional, Output, Self} from '@angular/core';
+import {AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Optional, Output, Self} from '@angular/core';
 import {ControlValueAccessor, FormControl, NgControl} from '@angular/forms';
 import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-select',
   templateUrl: './select.component.html',
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class SelectComponent implements OnInit, AfterViewInit, ControlValueAccessor {
 

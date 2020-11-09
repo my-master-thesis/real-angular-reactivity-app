@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-boundary-test',
-  templateUrl: './test.component.html'
+  templateUrl: './test.component.html',
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class TestComponent implements OnInit {
 

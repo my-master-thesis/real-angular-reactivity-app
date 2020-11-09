@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
 import {TasksStoreService} from '../../tasks/tasks-store.service';
 import {ContactsStoreService} from '../contacts-store.service';
 import {Task} from '../../tasks/task';
@@ -9,6 +9,7 @@ import {Subscription} from 'rxjs';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class DetailComponent implements OnInit, OnDestroy {
 

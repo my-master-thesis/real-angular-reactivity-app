@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Contact} from '../contact';
 import {Company} from '../company';
 import {CompanyStoreService} from '../company-store.service';
@@ -8,6 +8,7 @@ import {Subscription} from 'rxjs';
   selector: 'app-contacts-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css'],
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class CardComponent implements OnInit, OnDestroy {
 

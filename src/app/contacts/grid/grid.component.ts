@@ -1,9 +1,10 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Contact} from '../contact';
 
 @Component({
   selector: 'app-contacts-grid',
   templateUrl: './grid.component.html',
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class GridComponent implements OnInit {
 

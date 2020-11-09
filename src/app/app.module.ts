@@ -29,8 +29,14 @@ import { StaticThreeComponent } from './content/static-three/static-three.compon
 import { StaticFourComponent } from './content/static-four/static-four.component';
 import { StaticFiveComponent } from './content/static-five/static-five.component';
 import { StaticSixComponent } from './content/static-six/static-six.component';
-import { StaticSevenComponent } from './content/static-seven/static-seven.component';
 import { StaticEightComponent } from './content/static-eight/static-eight.component';
+import { DynamicComponent } from './dynamic/dynamic.component';
+import { DynamicTwoComponent } from './dynamic/dynamic-two/dynamic-two.component';
+import { DynamicThreeComponent } from './dynamic/dynamic-three/dynamic-three.component';
+import { DynamicFourComponent } from './dynamic/dynamic-four/dynamic-four.component';
+import { DynamicFiveComponent } from './dynamic/dynamic-five/dynamic-five.component';
+import { DynamicSixComponent } from './dynamic/dynamic-six/dynamic-six.component';
+import { DynamicEightComponent } from './dynamic/dynamic-eight/dynamic-eight.component';
 
 @NgModule({
   declarations: [
@@ -59,8 +65,14 @@ import { StaticEightComponent } from './content/static-eight/static-eight.compon
     StaticFourComponent,
     StaticFiveComponent,
     StaticSixComponent,
-    StaticSevenComponent,
-    StaticEightComponent
+    StaticEightComponent,
+    DynamicComponent,
+    DynamicTwoComponent,
+    DynamicThreeComponent,
+    DynamicFourComponent,
+    DynamicFiveComponent,
+    DynamicSixComponent,
+    DynamicEightComponent
   ],
   imports: [
     BrowserModule,

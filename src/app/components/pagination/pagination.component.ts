@@ -1,8 +1,9 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-pager',
-  templateUrl: './pagination.component.html'
+  templateUrl: './pagination.component.html',
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class PaginationComponent implements OnInit {
 

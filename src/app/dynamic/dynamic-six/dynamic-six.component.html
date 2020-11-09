@@ -1,0 +1,27 @@
+<div class="container rounded pb-2" style="background-color: #e8e9ea;">
+  <h4>Komponenta 6/7</h4>
+  <p>Ta podvojena komponenta vsebuje HTML kodo, ki ni prikazana, saj vsebuje <code>style="display: none"</code>. Še
+    vedno pa je ta prisotna v DOM strukturi in se v ozadju tudi posodablja.</p>
+  <div class="form-check">
+    <input [(ngModel)]="showContent" class="form-check-input" type="checkbox" value="Potrjen" name="showContent">
+    <label (click)="showContent = !showContent" class="form-check-label">
+      Prikaži vsebino (spreminja zgolj display)
+    </label>
+  </div>
+  <main [hidden]="!showContent" role="main">
+    <p>Ura s posodabljanjem na 1000ms: {{ currentDate.getHours() }} : {{ currentDate.getMinutes() }} : {{ currentDate.getSeconds() }}</p>
+    <p>
+      <button (click)="stopTimer(1)" class="btn btn-secondary">Ustavi</button>
+    </p>
+    <p>
+      <button (click)="resetTimer(1)" class="btn btn-secondary">Nadaljuj</button>
+    </p>
+    <p>Ura s posodabljanjem na 200ms: {{ currentDate2.getHours() }} : {{ currentDate2.getMinutes() }} : {{ currentDate2.getSeconds() }}</p>
+    <p>
+      <button (click)="stopTimer(2)" class="btn btn-secondary">Ustavi</button>
+    </p>
+    <p>
+      <button (click)="resetTimer(2)" class="btn btn-secondary">Nadaljuj</button>
+    </p>
+  </main>
+</div>

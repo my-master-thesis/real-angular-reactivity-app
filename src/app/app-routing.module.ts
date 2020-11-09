@@ -6,6 +6,7 @@ import {ContactsComponent} from './contacts/contacts.component';
 import {DetailComponent} from './contacts/detail/detail.component';
 import {TasksComponent} from './tasks/tasks.component';
 import {ContentComponent} from './content/content.component';
+import {DynamicComponent} from './dynamic/dynamic.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'contacts/:id', component: DetailComponent },
   { path: 'tasks', component: TasksComponent },
   { path: 'content', component: ContentComponent },
+  { path: 'dynamic', component: DynamicComponent },
   {path: '**', redirectTo: 'home'}
 ];
 

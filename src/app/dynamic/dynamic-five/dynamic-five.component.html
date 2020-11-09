@@ -1,0 +1,33 @@
+<div class="container rounded pb-2" style="background-color: #d8d9da;">
+  <h3>{{ componentTitle }}</h3>
+  <p>{{ componentText }}</p>
+  <div class="row">
+    <div class="col-12 col-md-4 pb-3">
+      <div class="form-check">
+        <input [(ngModel)]="showSix" class="form-check-input" type="checkbox" value="Potrjen" id="showSix" name="showSix">
+        <label class="form-check-label" for="showSix">
+          Prikaži komponento 6
+        </label>
+      </div>
+      <app-dynamic-six *ngIf="showSix"></app-dynamic-six>
+    </div>
+    <div class="col-12 col-md-4 pb-3">
+      <div class="form-check">
+        <input [(ngModel)]="showSeven" class="form-check-input" type="checkbox" value="Potrjen" id="showSeven" name="showSeven">
+        <label class="form-check-label" for="showSeven">
+          Prikaži komponento 7
+        </label>
+      </div>
+      <app-dynamic-six *ngIf="showSeven"></app-dynamic-six>
+    </div>
+    <div class="col-12 col-md-4 pb-3">
+      <div class="form-check">
+        <input [(ngModel)]="showEight" class="form-check-input" type="checkbox" value="Potrjen" id="showEight" name="showEight">
+        <label class="form-check-label" for="showEight">
+          Prikaži komponento 8
+        </label>
+      </div>
+      <app-dynamic-eight *ngIf="showEight"></app-dynamic-eight>
+    </div>
+  </div>
+</div>

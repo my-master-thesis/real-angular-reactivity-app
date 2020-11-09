@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
 import {Contact} from './contact';
 import {ContactsStoreService} from './contacts-store.service';
 import {Subscription} from 'rxjs';
@@ -30,6 +30,7 @@ import {animate, style, transition, trigger} from '@angular/animations';
       ]
     )
   ],
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class ContactsComponent implements OnInit, OnDestroy {
 
