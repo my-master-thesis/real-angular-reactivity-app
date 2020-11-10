@@ -3,4 +3,6 @@ export interface Task {
   title: string;
   description: string;
   contactId?: number;
+  duration?: number;
+  startDate?: Date;
 }

@@ -44,13 +44,14 @@ export class TableComponent implements OnInit, OnDestroy {
   }
 
   addNew() {
-    const maxId = this.tasks.reduce(
-      (max, task) => (task.id > max ? task.id : max),
-      0
-    );
+    // const maxId = this.tasks.reduce(
+    //   (max, task) => (task.id > max ? task.id : max),
+    //   0
+    // );
+    const newId = ++this.tasksStoreService.lastId;
     this.tasksStoreService.tasksSubject.next([
       {
-        id: maxId + 1,
+        id: newId,
         title: '',
         description: '',
         contactId: this.defaultContact,

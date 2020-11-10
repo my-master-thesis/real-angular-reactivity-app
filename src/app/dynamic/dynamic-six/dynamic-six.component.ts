@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
-import {interval} from 'rxjs';
+import {interval, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-dynamic-six',
@@ -11,8 +11,8 @@ export class DynamicSixComponent implements OnInit, OnDestroy {
   showContent = false;
   currentDate = new Date();
   currentDate2 = new Date();
-  timerSubscription;
-  timer2Subscription;
+  private timerSubscription: Subscription;
+  private timer2Subscription: Subscription;
 
   constructor() { }
 

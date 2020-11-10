@@ -37,6 +37,7 @@ import { DynamicFourComponent } from './dynamic/dynamic-four/dynamic-four.compon
 import { DynamicFiveComponent } from './dynamic/dynamic-five/dynamic-five.component';
 import { DynamicSixComponent } from './dynamic/dynamic-six/dynamic-six.component';
 import { DynamicEightComponent } from './dynamic/dynamic-eight/dynamic-eight.component';
+import { TableItemComponent } from './tasks/table-item/table-item.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { DynamicEightComponent } from './dynamic/dynamic-eight/dynamic-eight.com
     DynamicFourComponent,
     DynamicFiveComponent,
     DynamicSixComponent,
-    DynamicEightComponent
+    DynamicEightComponent,
+    TableItemComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import {Task} from './task';
   providedIn: 'root'
 })
 export class TasksStoreService {
+  public lastId = 12;
 
   public tasksSubject: BehaviorSubject<Task[]> = new BehaviorSubject<Task[]>([
     {

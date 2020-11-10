@@ -13,18 +13,18 @@
       <th scope="col">#</th>
       <th scope="col">Opravilo</th>
       <th scope="col">Opis</th>
+      <th scope="col">Čas izvajanja</th>
       <th *ngIf="showContacts" scope="col">Nosilec</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let task of tasks | filter: pageIndex: pageSize">
-      <td scope="row">{{ task.id }}</td>
-      <td><app-input [(ngModel)]="task.title"></app-input> </td>
-      <td><app-input [(ngModel)]="task.description"></app-input> </td>
-      <td *ngIf="showContacts">
-        <app-select [(ngModel)]="task.contactId" [data$]="contacts" bindLabel="firstName" bindLabelSecond="lastName" bindValue="id"></app-select>
-      </td>
-    </tr>
+    <tr
+      *ngFor="let task of tasks | filter: pageIndex: pageSize"
+      app-table-item
+      [task]="task"
+      [showContacts]="showContacts"
+      [contacts]="contacts"
+    ></tr>
     </tbody>
   </table>
   <app-pager
