@@ -9,7 +9,8 @@ import {Task} from './task';
 export class TasksStoreService {
   public lastId = 12;
 
-  public tasksSubject: BehaviorSubject<Task[]> = new BehaviorSubject<Task[]>([
+  public tasksSubject: BehaviorSubject<Task[]>;
+  private initialData = [
     {
       id: 12,
       title: 'Oddaj izdelek',
@@ -77,9 +78,27 @@ export class TasksStoreService {
       description: 'Integralni izračun',
       contactId: 18,
     },
-  ]);
+  ];
 
-  constructor() { }
+  constructor() {
+    try {
+      let storageData = localStorage.getItem('tasks-store');
+      if (storageData) {
+        storageData = JSON.parse(storageData);
+        if (Array.isArray(storageData)) {
+          storageData.forEach((item: Task) => {
+            if (item.startDate) {
+              item.startDate = new Date(item.startDate);
+            }
+          });
+          this.initialData = storageData;
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+    this.tasksSubject = new BehaviorSubject<Task[]>(this.initialData);
+  }
 
   getTaskById(id: number): Task {
     return this.tasksSubject.value.find(task => task.id === id);
@@ -93,5 +112,9 @@ export class TasksStoreService {
     return this.tasksSubject.pipe(
       map(tasks => tasks.filter(task => task.contactId === id))
     );
+  }
+
+  saveToStorage() {
+    localStorage.setItem('tasks-store', JSON.stringify(this.tasksSubject.value));
   }
 }

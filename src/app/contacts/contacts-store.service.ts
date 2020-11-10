@@ -7,7 +7,9 @@ import {Contact} from './contact';
 })
 export class ContactsStoreService {
 
-  contactsSubject: BehaviorSubject<Contact[]> = new BehaviorSubject<Contact[]>([
+  contactsSubject: BehaviorSubject<Contact[]>;
+
+  private initialData = [
     {
       id: 33,
       firstName: 'Anja',
@@ -253,11 +255,28 @@ export class ContactsStoreService {
       email: 'marija@test.si',
       phone: '123456789'
     }
-  ]);
+  ];
 
-  constructor() { }
+  constructor() {
+    try {
+      let storageData = localStorage.getItem('contacts-store');
+      if (storageData) {
+        storageData = JSON.parse(storageData);
+        if (Array.isArray(storageData)) {
+          this.initialData = storageData;
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+    this.contactsSubject = new BehaviorSubject<Contact[]>(this.initialData);
+  }
 
   getContactById(id: number): Contact {
     return this.contactsSubject.value.find(contact => contact.id === id);
+  }
+
+  saveToStorage() {
+    localStorage.setItem('contacts-store', JSON.stringify(this.contactsSubject.value));
   }
 }

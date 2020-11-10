@@ -1,5 +1,7 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, HostListener} from '@angular/core';
 import {timer} from 'rxjs';
+import {TasksStoreService} from './tasks/tasks-store.service';
+import {ContactsStoreService} from './contacts/contacts-store.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +10,7 @@ import {timer} from 'rxjs';
   changeDetection: ChangeDetectionStrategy.Default,
 })
 export class AppComponent {
+
   public showToolbar = true;
   public sideMenuItems = [
     { link: 'home', text: 'Naslovnica' },
@@ -17,6 +20,15 @@ export class AppComponent {
     { link: 'content', text: 'Statična vsebina' },
     { link: 'dynamic', text: 'Dinamična vsebina' },
   ];
+
+  @HostListener('window:beforeunload', ['$event'])
+  unloadNotification($event: any) {
+    this.tasksStoreService.saveToStorage();
+    this.contactsStoreService.saveToStorage();
+  }
+
+  constructor(private tasksStoreService: TasksStoreService, private contactsStoreService: ContactsStoreService) {
+  }
 
   toggleMenu() {
     this.showToolbar = !this.showToolbar;
