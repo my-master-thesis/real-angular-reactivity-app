@@ -44,7 +44,7 @@ export class ContactsStoreService {
       companyId: 6,
     },
     {
-      id: 28,
+      id: 29,
       firstName: 'Drago',
       lastName: 'Novak',
       email: 'drago@test.si',

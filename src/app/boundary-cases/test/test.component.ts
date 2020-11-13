@@ -47,8 +47,8 @@ export class TestComponent implements OnInit {
     for (let i = 0; i < 10000000; i++) {
       counter++;
     }
-    this.resultsClickVar = Date.now() - tmp;
     this.counterB = counter;
+    this.resultsClickVar = Date.now() - tmp;
     console.timeEnd('Function var increase');
   }
 

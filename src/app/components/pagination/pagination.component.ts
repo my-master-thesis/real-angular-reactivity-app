@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
-  selector: 'app-pager',
+  selector: 'app-pagination',
   templateUrl: './pagination.component.html',
   changeDetection: ChangeDetectionStrategy.Default,
 })

@@ -27,10 +27,10 @@
     ></tr>
     </tbody>
   </table>
-  <app-pager
+  <app-pagination
     [length]="tasks.length"
     [pageSize]="pageSize"
     [pageSizeOptions]="[10, 25, 50, 100]"
     (page)="pageChange($event)"
-  ></app-pager>
+  ></app-pagination>
 </div>
