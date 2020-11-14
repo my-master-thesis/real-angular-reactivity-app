@@ -4,7 +4,8 @@ import {interval, Subscription} from 'rxjs';
 @Component({
   selector: 'app-dynamic-six',
   templateUrl: './dynamic-six.component.html',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.Reactivity,
+  reactiveProperties: ['currentDate', 'currentDate2', 'showContent']
 })
 export class DynamicSixComponent implements OnInit, OnDestroy {
 

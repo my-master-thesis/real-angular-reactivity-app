@@ -8,7 +8,8 @@ import {Subscription} from 'rxjs';
   selector: 'app-contacts-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css'],
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.Reactivity,
+  reactiveProperties: ['contact']
 })
 export class CardComponent implements OnInit, OnDestroy {
 
@@ -27,6 +28,7 @@ export class CardComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    console.log(123);
     if (this.companySubscription) {
       this.companySubscription.unsubscribe();
     }

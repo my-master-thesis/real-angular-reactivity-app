@@ -30,7 +30,7 @@ import {animate, style, transition, trigger} from '@angular/animations';
       ]
     )
   ],
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.Reactivity,
 })
 export class ContactsComponent implements OnInit, OnDestroy {
 

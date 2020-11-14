@@ -4,7 +4,8 @@ import {ControlValueAccessor, FormControl, NgControl} from '@angular/forms';
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.Reactivity,
+  reactiveProperties: ['value']
 })
 export class InputComponent implements OnInit, ControlValueAccessor {
   @Input() label: string;

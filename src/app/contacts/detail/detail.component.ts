@@ -9,7 +9,7 @@ import {Subscription} from 'rxjs';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.Reactivity,
 })
 export class DetailComponent implements OnInit, OnDestroy {
 

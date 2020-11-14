@@ -3,7 +3,7 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-dynamic-two',
   templateUrl: './dynamic-two.component.html',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.Reactivity,
 })
 export class DynamicTwoComponent implements OnInit {
 

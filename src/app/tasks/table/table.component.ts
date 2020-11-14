@@ -8,7 +8,7 @@ import {TasksStoreService} from '../tasks-store.service';
 @Component({
   selector: 'app-tasks-table',
   templateUrl: './table.component.html',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.Reactivity,
 })
 export class TableComponent implements OnInit, OnDestroy {
 

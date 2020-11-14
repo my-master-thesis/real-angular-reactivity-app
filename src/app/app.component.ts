@@ -7,7 +7,7 @@ import {ContactsStoreService} from './contacts/contacts-store.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.Reactivity,
 })
 export class AppComponent {
 

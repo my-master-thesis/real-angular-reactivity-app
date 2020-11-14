@@ -3,7 +3,7 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-dynamic-five',
   templateUrl: './dynamic-five.component.html',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.Reactivity,
 })
 export class DynamicFiveComponent implements OnInit {
 

@@ -3,7 +3,7 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-dynamic-three',
   templateUrl: './dynamic-three.component.html',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.Reactivity,
 })
 export class DynamicThreeComponent implements OnInit {
 

@@ -3,7 +3,7 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output}
 @Component({
   selector: 'app-pagination',
   templateUrl: './pagination.component.html',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.Reactivity,
 })
 export class PaginationComponent implements OnInit {
 

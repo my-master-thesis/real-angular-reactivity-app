@@ -5,7 +5,8 @@ import {Subscription} from 'rxjs';
 @Component({
   selector: 'app-select',
   templateUrl: './select.component.html',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.Reactivity,
+  reactiveProperties: ['value']
 })
 export class SelectComponent implements OnInit, AfterViewInit, ControlValueAccessor {
 

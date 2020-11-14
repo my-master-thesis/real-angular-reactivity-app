@@ -6,7 +6,8 @@ import {Task} from './task';
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.Reactivity,
+  reactiveProperties: ['tasks']
 })
 export class TasksComponent implements OnInit, OnDestroy {
 

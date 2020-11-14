@@ -4,7 +4,7 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
   selector: 'app-dynamic',
   templateUrl: './dynamic.component.html',
   styleUrls: ['./dynamic.component.css'],
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.Reactivity,
 })
 export class DynamicComponent implements OnInit {
 

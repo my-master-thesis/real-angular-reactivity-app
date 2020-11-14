@@ -3,14 +3,18 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-boundary-test',
   templateUrl: './test.component.html',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.Reactivity,
+  reactiveProperties: [
+    'counterA', 'stringB', 'stringC', 'initialObject', 'resultsClick', 'resultsClickVar', 'resultsClickHidden',
+    'resultsClickTimeout', 'resultsClickRecursiveTimeout', 'resultsMultiple', 'resultsSetObject', 'hidden'
+  ]
 })
 export class TestComponent implements OnInit {
 
   public counterA = 1;
   public counterB = 1;
   public counterC = 1;
-  public initialObject = { title: 'Some random obj', value: 0, deeper: { title: 'Deeper object', someBool: true }, emptyOby: {}};
+  public initialObject = {title: 'Some random obj', value: 0, deeper: {title: 'Deeper object', someBool: true}, emptyOby: {}};
 
   public resultsClick;
   public resultsClickVar;
@@ -24,7 +28,8 @@ export class TestComponent implements OnInit {
 
   private recursiveTimer;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
@@ -107,7 +112,7 @@ export class TestComponent implements OnInit {
     console.time('Function set object');
     const tmp = Date.now();
     for (let i = 0; i < 10000000; i++) {
-      this.initialObject = { title: 'Some changed obj', value: i, deeper: { title: 'Deeper object', someBool: true }, emptyOby: {}};
+      this.initialObject = {title: 'Some changed obj', value: i, deeper: {title: 'Deeper object', someBool: true}, emptyOby: {}};
       // this.cdr.markForCheck();
     }
     this.resultsSetObject = Date.now() - tmp;
