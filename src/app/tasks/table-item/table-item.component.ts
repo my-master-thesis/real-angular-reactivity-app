@@ -43,7 +43,7 @@ export class TableItemComponent implements OnInit, OnDestroy {
   }
 
   stopTimer(skipStop = false) {
-    if (this.timerSubscription) {
+    if (this.timerSubscription && !this.timerSubscription.closed) {
       this.timerSubscription.unsubscribe();
       if (!skipStop) {
         this.task.startDate = null;
