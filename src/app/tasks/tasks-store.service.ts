@@ -92,6 +92,7 @@ export class TasksStoreService {
             }
           });
           this.initialData = storageData;
+          this.lastId = Math.max(...storageData.map(item => item.id));
         }
       }
     } catch (e) {
