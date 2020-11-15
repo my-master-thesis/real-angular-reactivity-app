@@ -1,18 +1,17 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit, Optional, Self} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, Optional, Self} from '@angular/core';
 import {ControlValueAccessor, FormControl, NgControl} from '@angular/forms';
 
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
   changeDetection: ChangeDetectionStrategy.Reactivity,
-  reactiveProperties: ['value']
 })
 export class InputComponent implements OnInit, ControlValueAccessor {
   @Input() label: string;
   @Input() placeholder = '';
   @Input() control: FormControl;
 
-  value: any = '';
+  value: any = null;
 
   constructor(
     // Retrieve the dependency only from the local injector,
@@ -21,7 +20,8 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     // We want to be able to use the component without a form,
     // so we mark the dependency as optional.
     @Optional()
-    private ngControl: NgControl
+    private ngControl: NgControl,
+    private cdr: ChangeDetectorRef
   ) {
     if (this.ngControl) {
       this.ngControl.valueAccessor = this;
@@ -35,6 +35,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
    */
   writeValue(value: any): void {
     this.value = value;
+    this.cdr.markForCheck();
   }
 
   /**
