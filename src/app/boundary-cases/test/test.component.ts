@@ -5,7 +5,7 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
   templateUrl: './test.component.html',
   changeDetection: ChangeDetectionStrategy.Reactivity,
   reactiveProperties: [
-    'counterA', 'stringB', 'stringC', 'initialObject', 'resultsClick', 'resultsClickVar', 'resultsClickHidden',
+    'counterA', 'counterB', 'counterC', 'initialObject', 'resultsClick', 'resultsClickVar', 'resultsClickHidden',
     'resultsClickTimeout', 'resultsClickRecursiveTimeout', 'resultsMultiple', 'resultsSetObject', 'hidden'
   ]
 })
