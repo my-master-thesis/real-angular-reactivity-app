@@ -6,7 +6,7 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
   changeDetection: ChangeDetectionStrategy.Reactivity,
   reactiveProperties: [
     'counterA', 'counterB', 'counterC', 'initialObject', 'resultsClick', 'resultsClickVar', 'resultsClickHidden',
-    'resultsClickTimeout', 'resultsClickRecursiveTimeout', 'resultsMultiple', 'resultsSetObject', 'hidden'
+    'resultsClickTimeout', 'resultsClickRecursiveTimeout', 'resultsMultiple', 'resultsSetObject'
   ]
 })
 export class TestComponent implements OnInit {
