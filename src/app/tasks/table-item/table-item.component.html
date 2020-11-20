@@ -1,6 +1,6 @@
 <td scope="row">{{ task.id }}</td>
-<td><app-input [(ngModel)]="task.title"></app-input></td>
-<td><app-input [(ngModel)]="task.description"></app-input></td>
+<td><app-input [(ngModel)]="task.title" name="opravilo"></app-input></td>
+<td><app-input [(ngModel)]="task.description" name="opis"></app-input></td>
 <td>
   {{ task.duration | date:'H:mm:ss':'UTC'}}
   <button *ngIf="task.startDate" (click)="stopTimer()" class="btn btn-danger">Stop</button>

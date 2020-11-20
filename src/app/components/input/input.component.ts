@@ -8,6 +8,7 @@ import {ControlValueAccessor, FormControl, NgControl} from '@angular/forms';
 })
 export class InputComponent implements OnInit, ControlValueAccessor {
   @Input() label: string;
+  @Input() name: string;
   @Input() placeholder = '';
   @Input() control: FormControl;
 

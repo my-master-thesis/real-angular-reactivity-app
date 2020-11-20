@@ -2,7 +2,7 @@
   <h1 class="mt-4">O strani</h1>
   <p>Ta stran vsebuje seznam kontaktov, od koder je s klikom na povezavo Več moč priti na podrobnosti oseb. Osebe je prav tako mogoče v živo posodabljati.</p>
   <p>Stran prikazuje primer resne strani, kjer se prikazujejo kontakti, te pa lahko dodajamo, urejamo, brišemo ter dodajamo med priljubljene. Na dnu je tudi paginacija, ki služi nadzoru nad tem koliko podatkov želimo prikazovati na enkrat.</p>
-  <div *ngIf="favorites?.length" [@inOutAnimation] class="container">
+  <div *ngIf="favorites?.length" [@inOutAnimation] class="container" id="favorite-contacts">
     <h2>Priljubljeni kontakti</h2>
     <app-contacts-grid
       [contacts]="favorites"
@@ -11,7 +11,7 @@
       (delete)="remove($event)"
     ></app-contacts-grid>
   </div>
-  <div class="container">
+  <div class="container" id="all-contacts">
     <div class="row">
       <div class="col-10">
         <h2>Vsi kontakti</h2>

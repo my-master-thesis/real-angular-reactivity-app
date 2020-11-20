@@ -3,6 +3,7 @@
   <input
          [placeholder]="placeholder"
          [value]="value"
+         [name]="name"
          (input)="onChange($event.target.value)"
          (blur)="onTouched()"
          type="text"
