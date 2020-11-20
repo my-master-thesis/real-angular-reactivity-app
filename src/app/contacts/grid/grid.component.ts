@@ -5,6 +5,7 @@ import {Contact} from '../contact';
   selector: 'app-contacts-grid',
   templateUrl: './grid.component.html',
   changeDetection: ChangeDetectionStrategy.Reactivity,
+  reactiveProperties: ['contacts'],
 })
 export class GridComponent implements OnInit {
 
